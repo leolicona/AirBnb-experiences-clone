@@ -1,13 +1,15 @@
 import React from "react"
-import ImageCard from "../images/katie-zafares.png"
-import Star from "../images/star.svg"
+
+
 
 export default function Card (props) {
+    const route = "../images/"
+   
     return(
         <div className="card">
-            <img className="card--image" src={props.img} alt="Card"/>
+            <img className="card--image" src={`./images/${props.img}`} alt="Card"/>
             <div className="card--stats">
-                <img src={Star} alt="star"/>
+                <img src="./images/star.svg" alt="star"/>
                 <span>{props.rating}</span>
                 <span className="gray">({props.reviewCount}) -</span>
                 <span className="gray">{props.country}</span>
