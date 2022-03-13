@@ -6,15 +6,16 @@ import cardsData from "./data/data"
 import "./styles.css"
 
 export default function App() {
-    console.log('Data:', cardsData)
          const CardElements = cardsData.map( (data) => {
             return <Card
+                key={data.id}
                 img={data.coverImg}
                 rating={data.stats.rating}
                 reviewCount={data.stats.reviewCount}
-                country={data.location}
+                location={data.location}
                 title={data.title}
                 price={data.price}
+                openSpots={data.openSpots}
             />    
     })
     
@@ -22,8 +23,9 @@ export default function App() {
         <div>
             <Navbar/>
             <Hero/>
-            
-            {CardElements}
+            <section className="cards-list">
+                {CardElements}
+            </section> 
         </div>
     )
 }
